@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla de Datos</title>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <h1>Datos del Formulario</h1>
-    <table border="1">
-        <tr>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Teléfono</th>
-            <th>Email</th>
-            <th>Sexo</th>
-        </tr>
-        <tr>
-            <td>Antonio</td>
-            <td>Cañizares Gamarra</td>
-            <td>123456789</td>
-            <td>anotnio@gmail.com</td>
-            <td>Hombre</td>
-        </tr>
+    
+    <input type="text" id="buscador" placeholder="Buscar por nombre o apellido...">
+    
+    <table border="1" id="tablaUsuarios">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Sexo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tablaBody">
+        </tbody>
     </table>
 
     <nav>
