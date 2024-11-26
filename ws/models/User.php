@@ -1,8 +1,9 @@
 <?php
-require_once(__DIR__ . '/../interfaces/IToJson.php');
+require_once 'interfaces/IToJson.php';
 
 class User implements IToJson
 {
+    private $id;
     private $nombre;
     private $apellidos;
     private $contraseña;
@@ -10,8 +11,9 @@ class User implements IToJson
     private $email;
     private $sexo;
 
-    public function __construct($nombre, $apellidos, $contraseña, $telefono, $email, $sexo)
+    public function __construct($id, $nombre, $apellidos, $contraseña, $telefono, $email, $sexo)
     {
+        $this->id = $id;
         $this->nombre = $nombre;
         $this->apellidos = $apellidos;
         $this->contraseña = $contraseña;
@@ -21,6 +23,10 @@ class User implements IToJson
     }
 
     // Getters
+    public function getId()
+    {
+        return $this->id;
+    }
     public function getNombre()
     {
         return $this->nombre;
@@ -47,6 +53,10 @@ class User implements IToJson
     }
 
     // Setters
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
@@ -75,6 +85,7 @@ class User implements IToJson
     public function toJson()
     {
         return json_encode([
+            'id' => $this->id,
             'nombre' => $this->nombre,
             'apellidos' => $this->apellidos,
             'contraseña' => $this->contraseña,
